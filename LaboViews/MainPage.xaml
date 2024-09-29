@@ -8,7 +8,58 @@
             Padding="30,0"
             Spacing="225">
 
-            <Label>Hello World!</Label>
+            <Border WidthRequest="150"
+                    HeightRequest="150"
+                    Stroke="Green"
+                    StrokeThickness="4"
+                    BackgroundColor="Black"
+                    StrokeShape="RoundRectangle 75">
+                
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">
+                    </TapGestureRecognizer>
+                </Border.GestureRecognizers>
+
+                <Border.Shadow>
+                    <Shadow Brush="DarkGray" Offset="20,15" Opacity=".8"/>
+                </Border.Shadow>
+                
+                <Image Source="profile_picture.jpg"></Image>
+            </Border>
+
+
+            <Border StrokeThickness="4" Stroke="Green" BackgroundColor="Black" 
+                    StrokeShape="RoundRectangle 15,0,15,0" HorizontalOptions="End">
+                <Border.Shadow>
+                    <Shadow Brush="DarkGray" Offset="20,15" Opacity=".8"/>
+                </Border.Shadow>
+                
+                <!--Extra gesture/animation-->
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped">
+
+                    </TapGestureRecognizer>
+                </Border.GestureRecognizers>
+                
+                <!--Example layout with a grid-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.RowSpan="3" Margin="0,0,15,0" StrokeThickness="0" StrokeShape="RoundRectangle 0,15,0,15">
+                        <Image Source="profile_picture.jpg" HeightRequest="120"></Image>
+                    </Border>
+                    <Label TextColor="White" Margin="0,10,0,0" Grid.Column="1" FontSize="15" FontAttributes="Bold">Name: Lucas Martinez</Label>
+                    <Label TextColor="White" Grid.Column="1" Grid.Row="1" FontSize="15">Age: 24</Label>
+                    <Label TextColor="White" Margin="0,0,10,0" Grid.Column="1" Grid.Row="2" FontSize="15" HorizontalTextAlignment="End">Occupation: Developper</Label>
+                </Grid>
+            </Border>
 
         </VerticalStackLayout>
     </ScrollView>
